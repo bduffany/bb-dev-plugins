@@ -279,6 +279,8 @@ def find_block(lines: Lines, start_pattern: str) -> Union[LineRange, None]:
         else:
             if re.search(start_pattern, line):
                 start = i
+                if delim_end in line:
+                    return (start, start + 1)
     return None
 
 
