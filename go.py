@@ -294,7 +294,7 @@ def line_matches(pattern, lines: Lines):
 
 PATHS_TO_INDEX = [OSS_REPO_PATH, INTERNAL_REPO_PATH]
 
-LIST_FILES_COMMAND = "git ls-files --exclude-standard --cached --others"
+LIST_FILES_COMMAND = "bash --norc -c 'comm -23 <(git ls-files --exclude-standard --cached --others | sort) <(git ls-files --deleted | sort)'"
 
 
 def find_all_imports_by_go_reference():
