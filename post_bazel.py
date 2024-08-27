@@ -23,7 +23,7 @@ class Fix:
 
 def is_build_failed_line(line):
     if re.search(
-        r"(INFO|FAILED):.*Build (completed|did NOT complete) successfully", line
+        r"(ERROR|INFO|FAILED):.*Build (completed|did NOT complete) successfully", line
     ):
         return True
     if re.search(r"ERROR:.*Build failed. Not running target", line):
